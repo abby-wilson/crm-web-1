@@ -1,0 +1,9 @@
+<h1> All Contacts </h1>
+
+<h2> Back to Home Page </h2> <a href = "<%=@landing_page%>">  <%=@landing_page%> </a> 
+
+<ul>
+<% @all_contacts.each do |contact| %>
+    <li> <p> Name - <%= contact.full_name %> </p> <p> Email - <%= contact.email %> </p> <p> Note - <%= contact.note %> </p> </li>
+  <% end %>
+</ul>
