@@ -1,15 +1,1 @@
 
-<div class="contact_container">
-
-<p class="contact_count">There are <%= @contacts.count %> contacts </p>
-
-<ul>
-  <% @contacts.each do |contact| %>
-    <li class="actual_contact">
-    Name: <%= "#{contact.full_name}" %> Email: <%= "#{contact.email}" %>
-    <p><a href="...">Edit</a> | <a href="...">Delete</a></p>
-    </li>
-  <% end %>
-</ul>
-
-</div>

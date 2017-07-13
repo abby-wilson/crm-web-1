@@ -2,21 +2,24 @@ require_relative 'contact'
 require 'sinatra'
 
 get '/' do
-  @contacts_page = "/contacts"
-  @contacts = Contact.all
+  redirect to('/contacts')
   erb :index
 end
 
 get '/contacts' do
   @landing_page = "/"
-  @all_contacts = Contact.all
+  @contacts = Contact.all
   erb :contacts
 end
 
 get '/contacts/:id' do
   # contacts_id = params[:id]
   @contact = Contact.find_by({id: params[:id].to_i})
-erb :show_contact
+  if @contact
+    erb :show_contact
+  else
+    raise Sinatra::NotFound
+  end
 end
 
 after do

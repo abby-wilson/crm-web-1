@@ -1,9 +1,14 @@
-<h1> All Contacts </h1>
 
-<h2> <a href="/">Back to Homepage</a> 
+<div class="contact_container">
+<p class="contact_count">There are <%= @contacts.count %> contacts </p>
 
 <ul>
-<% @all_contacts.each do |contact| %>
-    <li> <p> Name - <%= contact.full_name %> </p> <p> Email - <%= contact.email %> </p> <p> Note - <%= contact.note %> </p> </li>
+  <% @contacts.each do |contact| %>
+    <li class="actual_contact">
+    <a href="/contacts/<%=contact.id %>">Name: <%= "#{contact.full_name}" %> </a> <p> Email: <%= "#{contact.email}" %></p>
+    <p><a href="...">Edit</a> | <a href="...">Delete</a></p>
+    </li>
   <% end %>
 </ul>
+
+</div>
